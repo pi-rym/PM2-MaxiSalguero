@@ -1,0 +1,48 @@
+header{
+    background-color: bisque;
+    padding: 1em 15em 1em 2em ;
+}
+
+main{
+    margin: 2em;
+}
+
+.container-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-list{
+    display: flex;
+    font-size: 1.5em;
+}
+
+.header-list li:nth-child(-n+2) a{
+    margin-right: 20px;
+}
+
+#header-nav{
+    padding: 10px 0 0 0;
+}
+
+.top-movies-cards li{
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+    vertical-align: top;
+    margin: 2.5% 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.movie-title{
+    margin-bottom: 1em;
+}
+
+.movie-poster{
+    width: 300px;
+    height: 450px;
+}
+

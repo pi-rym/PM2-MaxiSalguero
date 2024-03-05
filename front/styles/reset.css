@@ -1,0 +1,64 @@
+/* Reset CSS */
+
+/* Box sizing border-box por defecto */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo de tipografía predeterminado */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Cambiar según tus preferencias */
+}
+
+/* Eliminar estilos de lista */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Eliminar estilos de enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Eliminar márgenes y rellenos predeterminados para elementos de formulario */
+button,
+input,
+select,
+textarea {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: inherit; /* Heredar la tipografía del elemento padre */
+    font-size: inherit; /* Heredar el tamaño de fuente del elemento padre */
+}
+
+/* Eliminar decoraciones de borde */
+button,
+input {
+    border: none;
+}
+
+/* Asegurar consistencia de margen */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

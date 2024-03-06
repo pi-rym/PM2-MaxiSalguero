@@ -25,7 +25,7 @@ main{
     padding: 10px 0 0 0;
 }
 
-.top-movies-cards li{
+.movie-container{
     display: inline-block;
     width: 30%;
     height: 30%;
@@ -41,7 +41,7 @@ main{
     margin-bottom: 1em;
 }
 
-.movie-poster{
+.movie-img{
     width: 300px;
     height: 450px;
 }

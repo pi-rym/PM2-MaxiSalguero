@@ -37,25 +37,29 @@ const repository = new Repository()
 const createMovieCard = (movie) => {
     const {title, year, director, duration , rate , poster} = movie
 
-    const div = document.createElement("div");
-    const h2 = document.createElement("h2");
+    const cardHeader = document.createElement("div");
+    const cardBody = document.createElement("div");
+    const h5 = document.createElement("h5");
     const img = document.createElement("img");
     const p = document.createElement("p");
 
-    div.classList.add("movie-container");
-    h2.classList.add("movie-title");
-    img.classList.add("movie-img");
-    p.classList.add("movie-p");
+    cardHeader.classList.add("card");
+    cardHeader.style = "width: 18rem"
+    cardBody.classList.add("card-body")
+    h5.classList.add("card-title");
+    img.classList.add("card-img-top");
+    p.classList.add("card-text");
 
-    h2.innerHTML = `${title}`
+    h5.innerHTML = `${title}`
     img.src = `${poster}`
     p.innerHTML = `${director}`
 
-    div.appendChild(h2);
-    div.appendChild(img);
-    div.appendChild(p);
+    cardHeader.appendChild(img);
+    cardHeader.appendChild(cardBody)
+    cardBody.appendChild(h5);
+    cardBody.appendChild(p);
 
-    return div
+    return cardHeader
 }
 
 const appendMovieCard = () => {

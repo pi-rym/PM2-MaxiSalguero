@@ -1,4 +1,4 @@
-#container-top-movies{
+.container-home{
     display: flex;
     justify-content: space-evenly;
 }

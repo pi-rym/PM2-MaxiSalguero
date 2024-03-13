@@ -44,5 +44,5 @@ const createStaticPage = (page) => {
 
 module.exports = {
     createHome,
-    createStaticPage
+    createStaticPage,
 }

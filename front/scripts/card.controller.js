@@ -20,5 +20,5 @@ const renderCards = (callback) => {
 
 module.exports = {
     renderCards,
-    createCard
+    createCard,
 }

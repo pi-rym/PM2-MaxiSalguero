@@ -1,3 +1,5 @@
-const app = require("./src/server")
+const app = require("./src/app")
 
-app.listen(3000, () => console.log("server is listening on port 3000"));
+const PORT = 3000;
+
+app.listen(3000, () => console.log(`server is listening on port ${PORT}`));

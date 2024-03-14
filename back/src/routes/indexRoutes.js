@@ -1,11 +1,15 @@
 const { Router } = require('express')
-const getMovies = require('../controllers/moviesController')
-const getGreeting = require("../controllers/welcomeController")
+const moviesRoute = require("./moviesRoute")
+const welcomeRoute = require('./welcomeRoutes')
+//const welcomeController = require("../controllers/welcomeController")
+// const moviesController = require('../controllers/moviesController')
 
 const router = Router()
 
-router.get("/", getGreeting)
+router.use("/", welcomeRoute)
+router.use("/movies", moviesRoute) 
 
-router.use("/movies", getMovies)
+//router.get("/", welcomeController) 
+//router.get("/movies", moviesController)
 
 module.exports = router

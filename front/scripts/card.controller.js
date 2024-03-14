@@ -15,7 +15,7 @@ const createCard = (img, title, director) => {
 
 const getData = async () => {
     try {
-      const response = await axios.get("https://students-api.up.railway.app/movies"); 
+      const response = await axios.get("http://localhost:3000/movies"); 
       return response.data
     } catch (error) {
       console.log(error.response.data);

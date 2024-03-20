@@ -1,4 +1,138 @@
+/* Home CSS */
+
 .container-home{
     display: flex;
     justify-content: space-evenly;
 }
+
+/* Boton add Movie - CSS */
+
+.hover-pointer:hover{
+    cursor: pointer;
+}
+
+/* Formulario CSS */
+
+.formulario{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.formulario form{
+    background-color: #f7f7f7;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 25%);
+    border-radius: 20px;
+    padding: 8px 100px;
+    flex:1;
+}
+
+.formulario h2{
+    font-size: 32px;
+    font-weight: 400;
+    color: #212121;
+}
+
+/* Campos Form - CSS */
+
+.campo{
+    margin: 24px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.campo label{
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.campo input{
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    border: none;
+    padding: 30px 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.input-active input {
+    border: 2px solid #6278F7;
+}
+
+/* Multiple Options Form - CSS */
+
+.lista-opciones label{
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 8px;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  }
+
+.custom-select .placeholders{
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: 133px;
+    display: inline-block;
+    opacity: .8;
+}
+  
+.custom-select .options {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+  
+.custom-select .options div {
+    padding: 5px;
+}
+  
+.custom-select .options input[type="checkbox"] {
+    margin-right: 3px;
+}
+
+/* Opciones seleccionadas Form - CSS */
+
+.opcionSeleccionada {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin: 2px;
+  }
+
+/* Button Create, Clean - CSS */
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boton{
+    width: 160px;
+    background-color: #6278F7;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    padding: 24px 32px;
+    border: none;
+    color: #ffffff;
+    margin: 32px 0;
+}
+
+.boton:hover{
+    color: #95FFD4;
+}
+

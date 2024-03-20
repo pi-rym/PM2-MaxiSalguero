@@ -1,4 +1,5 @@
 const { renderCards  } = require("./card.controller");
+const mostrarFormulario = require("./form.controller")
 
 const createHome = () => {
     const main = document.querySelector("[data-main]");
@@ -20,25 +21,32 @@ const createStaticPage = (page) => {
     const main = document.querySelector("[data-main]")
     main.innerHTML = ""
     const section = document.createElement("section");
-    let contenido, title, className;
 
-    if (page === "movie") { 
-        title = "Movies";
-        className = "container-movies";
-
+    let contenido;
+    if (page === "movie") {
+        contenido = `
+            <h1>Movies</h1>
+            <img src="./public/images/add.png" alt="add" id="img-add" />
+        `
+        section.classList.add("d-flex", "justify-content-center", "align-items-center");
     } else if (page === "about") { 
-        title = "About Us";
-        className = "container-about";
+        contenido = `
+        <h1>About Us</h1>
+        <p>Know e little more about us</p>
+        `
+        section.classList.add("container-about");
     }
 
-    contenido = `
-        <h1>${title}</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut in maxime libero illum eveniet a harum maiores soluta praesentium odio totam corporis atque exercitationem est officia, obcaecati rerum voluptates iste.</p>
-    `;
-    
-    section.classList.add(className);
-    section.innerHTML = contenido;
+    section.innerHTML = contenido
     main.appendChild(section);
+
+    const btnImg = document.getElementById("img-add");
+    //Pregunto si existe, si es true ejecuto
+    if (btnImg) {
+        btnImg.classList.add("hover-pointer");
+        btnImg.addEventListener("click", () => mostrarFormulario());
+    }
+
     return main;
 }
 

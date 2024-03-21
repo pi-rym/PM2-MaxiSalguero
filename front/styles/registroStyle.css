@@ -1,0 +1,68 @@
+  body {
+    background-image: url(../public/images/background.jpg);
+    color: #4d4d4d;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    margin-top: 5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .registry-header__title {
+    font-family: "Pacifico", cursive;
+    font-size: 70px;
+    letter-spacing: 8px;
+    -webkit-text-stroke: 2px black;
+    color: #df2525;
+    margin-bottom: 2rem;
+  }
+  
+  .registry-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.75rem;
+  }
+  
+  .icon-complete {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    background-image: url(../public/images/checkmark.svg);
+    background-size: cover;
+
+  }
+
+/* Card CSS */
+  
+  .card__title {
+    max-width: 20rem;
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 1rem;
+  }
+  
+/* Button CSS */
+
+  .button {
+    display: block;
+    background-color: #0071ea;
+    border-radius: 7px;
+    width: 100%;
+    margin-top: 1rem;
+    max-width: 20rem;
+    padding: 1.125rem;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 22px;
+    align-self: center;
+    text-align: center;
+  }
+  

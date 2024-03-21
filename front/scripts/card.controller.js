@@ -3,7 +3,7 @@ const axios = require("axios")
 const createCard = (img, title, director) => {
     const container = 
     `<div class="card" style="width: 18rem;">
-     <img src="${img}" class="card-img-top" alt="...">
+     <img src="${img}" class="card-img-top" style = "height: 350px" alt="...">
      <div class="card-body">
         <h5 class="card-title">${title}</h5>
         <p class="card-text">${director}</p>

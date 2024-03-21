@@ -1,5 +1,5 @@
 const { renderCards  } = require("./card.controller");
-const mostrarFormulario = require("./form.controller")
+const {mostrarFormulario} = require("./form.controller")
 
 const createHome = () => {
     const main = document.querySelector("[data-main]");
@@ -7,12 +7,14 @@ const createHome = () => {
     const section = document.createElement("section");
 
     renderCards((cards) => {
-        section.classList.add("container-home", "my-5");
+        section.classList.add("container-home", "p-5");
         cards.forEach((cardHtml) => {
             section.insertAdjacentHTML("beforeend", cardHtml);
         });
         main.appendChild(section);
     });
+
+    main.appendChild(section)
 
     return main;
 }
@@ -25,14 +27,14 @@ const createStaticPage = (page) => {
     let contenido;
     if (page === "movie") {
         contenido = `
-            <h1>Movies</h1>
+            <h1 class="text-white">Movies</h1>
             <img src="./public/images/add.png" alt="add" id="img-add" />
         `
         section.classList.add("d-flex", "justify-content-center", "align-items-center");
     } else if (page === "about") { 
         contenido = `
-        <h1>About Us</h1>
-        <p>Know e little more about us</p>
+        <h1 class="text-white">About Us</h1>
+        <p class="text-white mb-0">Know e little more about us</p>
         `
         section.classList.add("container-about");
     }

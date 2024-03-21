@@ -1,3 +1,5 @@
+const axios = require("axios")
+
 const mostrarFormulario = () => {
     const main = document.querySelector("[data-main]")
 
@@ -5,37 +7,37 @@ const mostrarFormulario = () => {
 
     if (!formularioExistente) {
         const container = `
-        <form onSubmit={manejarEnvio}>
+        <form>
         <h2>Complete the form to create a new movie.</h2>
         <div class="campo">
             <label>Title</label>
             <input
+                name ="title"
                 placeholder= "Insert title..."
-                required
                 type="text"
             />
         </div> 
         <div class="campo">
             <label>Year</label>
             <input
+                name ="year"
                 placeholder= "Insert year..."
-                required
-                type="text"
+                type="number"
             />
         </div> 
         <div class="campo">
             <label>Director</label>
             <input
+                name ="director"
                 placeholder= "Insert director..."
-                required
                 type="text"
             />
         </div>
         <div class="campo">
             <label>Duration</label>
             <input
+                name ="duration"
                 placeholder= "Insert duration..."
-                required
                 type="text"
             />
         </div>
@@ -57,21 +59,21 @@ const mostrarFormulario = () => {
         <div class="campo">
             <label>Rate</label>
             <input
+                name ="rate"
                 placeholder= "Insert rate..."
-                required
-                type="text"
+                type="number"
             />
         </div> 
         <div class="campo">
             <label>Poster</label>
             <input
+                name ="poster"
                 placeholder= "Insert poster..."
-                required
                 type="text"
             />
         </div> 
         <div class= "botones">
-            <button class="boton">
+            <button class="boton" id="btnSubmit">
                 Create
             </button>
             <button class="boton" id="btnClean">
@@ -150,7 +152,63 @@ const mostrarFormulario = () => {
                     contenedorOpciones.removeChild(opcionSeleccionada);
                 }
             });
-        }       
+        }
+        
+        /* ButtonSubmit */
+
+        const buttonSubmit = document.getElementById("btnSubmit")
+
+        let valuesInputs = {};
+
+        if(buttonSubmit) {
+            const checkboxes = document.querySelectorAll('.opciones input[type="checkbox"]');
+
+            buttonSubmit.addEventListener("click", (e) => {        
+                e.preventDefault();
+
+                /* Validacion */
+                let camposVacios = false
+
+                inputs.forEach((input) => {
+                    const value = input.value;
+                    
+                    if( value.trim() === "") {
+                        camposVacios = true
+                    };
+                })
+
+                for (let i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        camposVacios = false
+                        break
+                    }
+                    else camposVacios = true
+                }
+                
+                if (camposVacios){
+                    alert("Hay campos vacíos aún");
+                }                
+                else {
+                    inputs.forEach((input) => {
+                        const value = input.value;
+                        const name = input.getAttribute('name');
+                        valuesInputs[name] = value; 
+                    })
+                        
+                    const sendDataBack = async () => {
+                        try {
+                        const response = await axios.post("http://localhost:3000/movies", valuesInputs); 
+                        return response.data;
+                        } catch (error) {
+                        console.error('Error al enviar los datos al backend:', error);
+                        }
+                    }
+                    sendDataBack();
+
+                    window.location.href = "http://127.0.0.1:5501/front/pages/registroCompletado.html#"
+                } 
+            })
+        }
 
         /* ButtonClean */
 
@@ -169,6 +227,9 @@ const mostrarFormulario = () => {
                 contenedorOpciones.innerHTML ="";
             })
         }
+        
 };
 
-module.exports = mostrarFormulario
+module.exports = {
+    mostrarFormulario,
+}

@@ -1,8 +1,14 @@
 /* Home CSS */
 
+main{
+    background-image: url(../public/images/backgroundHome.jpg);
+}
+
 .container-home{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 /* Boton add Movie - CSS */
@@ -16,7 +22,8 @@
 .formulario{
     display: flex;
     justify-content: space-evenly;
-    margin: 30px 50px;
+    margin: 30px 50px 0px 50px;
+    padding-bottom: 30px;
     flex-wrap: wrap;
     gap: 20px;
 }
